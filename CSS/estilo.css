@@ -1,0 +1,73 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+#pgto {
+    color: red;
+    font-weight: bold;
+    font-size: 15px;
+}
+footer {
+    font-size: 10px;
+    text-align: center;
+}
+.menu {
+    background-color: red;
+    text-decoration: none;
+    position: relative;
+ 
+}
+.menu a{
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+    text-align: center;
+    display: inline-block;
+    width: 23%;
+    padding: 10px, 20px ;
+
+}
+strike {
+    font-size: 15px;
+}
+.valor_atual {
+    color: red;
+    font-weight: bold;
+    font-size: 20px;
+}
+.produto {
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.visual {
+    width: 20%;
+    height: 20%;
+    vertical-align: bottom;
+    text-align: center;
+    display: inline-block;
+    margin: 32px;
+    border: 30px;
+}
+
+.nossas_lojas {
+    width: 33%;
+    height: 50%;
+    text-align: center;
+    display: inline-block;
+    padding: 50px, 10px, 50px, 10px;
+}
+
+.contato {
+    display:inline-block;
+    width: 33%;
+    height: 50%;
+    text-align: center; 
+    margin: 50px;
+    padding: 50px;
+}
+
+.msg {
+    text-align: center;
+    font-weight: bold;
+    color: red;
+}
