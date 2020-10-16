@@ -29,3 +29,11 @@ function destaque(imagem){
     else 
         imagem.width = 280;
 };
+
+function alerta (){
+    alert ("Mensagem enviada com sucesso! \nEm breve retornaremos o contato...");
+};
+
+function ir_produtos(){
+    window.location.href = "produtos.html"
+}
