@@ -7,15 +7,11 @@
         <script src="./JS/funcoes.js"></script>
     </head>
     <body>
-        <!--Inicio do menu-->
-        <nav class="menu">
-            <a href="index.html"><img src="./IMAGENS/full-stack-logo.png"width=100px></a>
-            <a href="produtos.html">Produtos</a>
-            <a href="lojas.html">Nossas Lojas</a>
-            <a href="contato.html">Fale Conosco</a>
-            <a href="carrinho.html">Meu carrinho</a>
-        </nav>
-        <!--fim do menu-->
+      <!--Inicio do menu-->
+      <?php 
+        include ('menu.html');
+     ?>
+    <!--fim do menu-->
         <main> 
             <header>
                 <h2> Contato </h2>
