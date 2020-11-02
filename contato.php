@@ -1,3 +1,26 @@
+<?php 
+    $servername = 'localhost';
+    $username = 'root' ;
+    $password = 'root' ;
+    $database = 'fullstackeletro';
+     
+    //criando a conexão
+    $conn = mysqli_connect ($servername, $username, $password, $database);
+
+    // verificando conexão
+    if (!$conn){
+        die ("A conexão ao BD falhou: " .mysqli_connect_error());
+    }
+
+    if (isset($_POST['nome'])&&isset($_POST['msg'])){
+        $nome=$_POST['nome'];
+        $msg=$_POST['msg'];
+
+        $sql = "insert into comentarios (nome, msg) values ('$nome', '$msg')";
+        $result = $conn->query($sql);
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
     <head>
@@ -28,19 +51,36 @@
             </div>
             </section>
             <section class="msg">
-                <form>
+                <form method="post" action="">
                     <p>Dúvidas, Sugestões e Elogios</p>
                     <h4>Nome:</h4>
-                    <input type="text" style="width:400px;">
+                    <input type="text" name="nome" style="width:400px;">
                     <h4>Mensagem:</h4>
-                    <textarea style="width:400px;" placeholder="Digite sua mensagem aqui..."></textarea><br>
+                    <textarea name="msg" style="width:400px;" placeholder="Digite sua mensagem aqui..."></textarea><br>
                     <input type="submit" value="Enviar" onclick="alerta()">
                 </form>
+                <br><br><br>
             </section>
-            <br><br><br><br>
-            <br><br><br><br>
+
+                <?php 
+                    $sql= "select * from comentarios";
+                    $result = $conn->query($sql);
+
+                    if ($result->num_rows < 0){
+                        while ($rows = $result = fetch_assoc()){
+                            echo "Nome: ", $rows['nome'], "<br>";
+                            echo "Comentário: ", $rows['msg'], "<br>";
+                            echo "Recebido em: ", $rows['recebido_em'], "<br>";
+                            echo "<hr>";
+                        }
+                    }else {
+                        echo "Nenhum comentário ainda.";
+                    }
+                ?>
+            
         </main>  
         <hr>
+        <br><br><br><br>
         <footer>
             <div id="pgto">
                 <p>Formas de Pagamento </p>
