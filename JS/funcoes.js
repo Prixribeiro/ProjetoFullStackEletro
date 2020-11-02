@@ -35,5 +35,5 @@ function alerta (){
 };
 
 function ir_produtos(){
-    window.location.href = "produtos.html"
+    window.location.href = "produtos.php"
 }
