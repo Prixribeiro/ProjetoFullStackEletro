@@ -1,6 +1,7 @@
-body {
-    font-family: Arial, Helvetica, sans-serif;
+* {
+    font-family:'Archivo Narrow', sans-serif;
 }
+
 #pgto {
     color: red;
     font-weight: bold;
@@ -9,41 +10,22 @@ body {
     text-align: center;
     display: block;
 }
+
 #rodape {
     font-size: 10px;
     color: black;
-}
-.menu {
-    background-color: red;
-    text-decoration: none;
-    position: relative;
- 
-}
-.menu a{
-    color: white;
-    font-weight: bold;
-    text-decoration: none;
-    text-align: center;
-    display: inline-block;
-    width: 15%;
-    padding: 20px;
-    margin-left: 20px;
-
-}
-
-ul li{
-    list-style-type: none;
-    
 }
 
 strike {
     font-size: 15px;
 }
+
 .valor_atual {
     color: red;
     font-weight: bold;
     font-size: 20px;
 }
+
 .descricao {
     font-size: 15px;
     font-weight: bold;
@@ -52,21 +34,15 @@ strike {
 
 .box_produto {
     width: 25%;
-    height: 20%;
+    height: 25%;
     vertical-align: bottom;
     text-align: center;
-    display: inline-block;
+    display: inline-flex;
     position: relative;
-    margin-left: 50px;
-    margin-bottom: 30px;
-}
-.produtos {
-    float: right;
-    margin-left: 150px;
+    padding: 15px; 
+    border-left: 50px;
+    margin-top: 50px;
     margin-right: 0;
-    margin-bottom: 150px;
-    width: 90%;
-    
 }
 
 .nossas_lojas {
@@ -86,31 +62,11 @@ strike {
     padding: 50px;
 }
 
-.msg {
-    text-align: center;
-    font-weight: bold;
-    color: red;
-}
 
 .categorias {
-    position: fixed;
-    float: left;
-    width: 15%;
-    text-align: left;
-    box-sizing: border-box;
-}
-button {
-    background: green;
+    width: 50%;
     text-align: center;
-    font-weight: bold;
-    color: snow;
-    border-radius: 10px;
-    padding: 10px;
+    justify-self: start;
+    padding-bottom: initial;
 }
-#carrinho {
-    text-align: center; 
-    font-weight: bold; 
-    font-size: large;
-    background-color: rgb(212, 209, 209); 
-    font-family: Arial, Helvetica, sans-serif;
-}
+

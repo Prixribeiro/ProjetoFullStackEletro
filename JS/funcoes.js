@@ -24,16 +24,12 @@ function msg_compra (){
 
 function destaque(imagem){
     console.log(imagem);
-    if (imagem.width == 280)
+    if (imagem.width == 230)
         imagem.width = 150;
     else 
-        imagem.width = 280;
+        imagem.width = 230;
 };
 
 function alerta (){
     alert ("Mensagem enviada com sucesso! \nEm breve retornaremos o contato...");
 };
-
-function ir_produtos(){
-    window.location.href = "produtos.php"
-}
