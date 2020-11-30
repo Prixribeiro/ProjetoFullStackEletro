@@ -1,25 +1,4 @@
-<?php 
-    $servername = 'localhost';
-    $username = 'root' ;
-    $password = 'root' ;
-    $database = 'fullstackeletro';
-     
-    //criando a conexão
-    $conn = mysqli_connect ($servername, $username, $password, $database);
 
-    // verificando conexão
-    if (!$conn){
-        die ("A conexão ao BD falhou: " .mysqli_connect_error());
-    }
-
-    if (isset($_POST['nome'])&&isset($_POST['msg'])){
-        $nome=$_POST['nome'];
-        $msg=$_POST['msg'];
-
-        $sql = "insert into comentarios (nome, msg) values ('$nome', '$msg')";
-        $result = $conn->query($sql);
-    }
-?>
 
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -70,23 +49,28 @@
                 <br><br><br>
             </section>
 
-                <?php 
-                    $sql= "select * from comentarios";
-                    $result = $conn->query($sql);
+            <?php 
+                $dados_json = file_get_contents("http://localhost:8888/fullstackeletro/getContent_coment.php?table=comentarios");
+                $dados = json_decode($dados_json,true);
+                //print_r($dados);
+                
+                foreach ($dados as $key => $rows){
 
-                    if ($result->num_rows < 0){
-                        while ($rows = $result = fetch_assoc()){
+                    if($result->num_rows > 0){
+                        while($rows = $result->fetch_assoc($sql)) {
+                            //echo $rows["categoria"];
+                            echo "Data: ", $rows['recebido_em'], "<br>";
                             echo "Nome: ", $rows['nome'], "<br>";
-                            echo "Comentário: ", $rows['msg'], "<br>";
-                            echo "Recebido em: ", $rows['recebido_em'], "<br>";
+                            echo "Mensagem: ", $rows['msg'], "<br>";
                             echo "<hr>";
                         }
-                    }else {
-                        echo "Nenhum comentário ainda.";
+                        } else {
+                            echo "Nenhum comentário ainda!";
+                        }
                     }
-                ?>
+            ?> 
             
-        </main>  
+        </main>
         <hr>
         <br><br><br><br>
         <footer>
@@ -96,6 +80,5 @@
                 <p id="rodape">&copy; Recode Pro</p>
             </div>
         </footer>
-
     </body>
 </html>
