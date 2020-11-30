@@ -36,7 +36,7 @@
             </section>
             <section class="container text-center">
                 <div class="form-group-sm">
-                    <form method="post" action="#">
+                    <form method="post" action="">
                         <h2 class="row-center text-danger ">Dúvidas, Sugestões e Elogios</h2><br>
                         <h5 class="row-sm-center">Nome:</h5>
                         <input class="form-control-center" type="text" name="nome" style="width:400px;"> <br>
@@ -55,18 +55,10 @@
                 //print_r($dados);
                 
                 foreach ($dados as $key => $rows){
-
-                    if($result->num_rows > 0){
-                        while($rows = $result->fetch_assoc($sql)) {
-                            //echo $rows["categoria"];
-                            echo "Data: ", $rows['recebido_em'], "<br>";
-                            echo "Nome: ", $rows['nome'], "<br>";
-                            echo "Mensagem: ", $rows['msg'], "<br>";
-                            echo "<hr>";
-                        }
-                        } else {
-                            echo "Nenhum comentário ainda!";
-                        }
+                    echo "Data: ", $rows['recebido_em'], "<br>";
+                    echo "Nome: ", $rows['nome'], "<br>";
+                    echo "Mensagem: ", $rows['msg'], "<br>";
+                    echo "<hr>";
                     }
             ?> 
             
