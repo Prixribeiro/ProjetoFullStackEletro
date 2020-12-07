@@ -1,9 +1,15 @@
-import Contato from '../Components/Contato';
+import React from 'react';
 import {Container} from 'react-bootstrap';
-import 'react-inputs-validation/lib/react-inputs-validation.min.css';
+import Form from '../Components/Footer/Contato/Form';
 
-<Container>
-    <Contato />
-</Container>
 
+function Contato() {
+    return (
+      
+            <Container fluid>
+              <Form />
+            </Container>
+    );
+  }
+  
 export default Contato;

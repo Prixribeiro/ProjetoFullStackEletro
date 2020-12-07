@@ -4,7 +4,7 @@ import {BrowserRouter} from 'react-router-dom';
 import {Container} from 'react-bootstrap';
 import './App.css';
 import Footer from './Components/Footer';
-import 'react-inputs-validation/lib/react-inputs-validation.min.css';
+
 
 
 function App() {
