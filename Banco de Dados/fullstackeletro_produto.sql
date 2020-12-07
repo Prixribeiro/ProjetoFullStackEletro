@@ -35,3 +35,6 @@ INSERT INTO `produto` VALUES
 (11,'microondas','Microondas Panasonic Preto Vidro Temperado',689.00,590.00,'IMAGENS/microondas_panasonic_preto.jpeg'),
 (12,'lavaloucas',' Lava Louça Electrolux 14 serviços',4349.00,4000.00,'IMAGENS/lava-louca-electrolux-14 servicos.jpeg');
 
+select * from produto
+join pedidos
+on produto.idproduto = pedidos.idproduto;
