@@ -1,7 +1,7 @@
 figure>img{
     width:200px;
     height: 250px;
-    border-style: dotted;
+    border-style:solid;
 }
 
 figcaption{

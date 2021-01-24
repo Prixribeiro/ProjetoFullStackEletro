@@ -3,7 +3,7 @@ import Lista from '../Components/Home/lista';
 
 function Home(){
     const newLocal = (
-        <Jumbotron fluid className="text-center" bg="light">
+        <Jumbotron fluid className="text-center bg-white">
             <Container fluid>
                     <h2 className="display-6"> Seja Bem-vindx!</h2>
                     <hr className="my-4"></hr>

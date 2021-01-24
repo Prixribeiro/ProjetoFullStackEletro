@@ -6,7 +6,7 @@ import wpp from '../Footer/whatsapp.png';
 
 function Footer () {
     return (
-        <Container fluid className="fixed-bottom">
+        <Container fluid className="position-relative fixed-bottom">
             <Row>
             <Col className="col-md-9">
                 <img src={email} alt="Email"  className="email" />
