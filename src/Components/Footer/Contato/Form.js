@@ -5,7 +5,7 @@ import {Container, Row} from 'react-bootstrap';
 class Form extends React.Component {
   render() {
     return (
-      <Container fluid>
+      <Container>
       <form method="post" className="form-group-sm">
         <Row><h2 className="row-center text-danger text-center">Dúvidas, Sugestões e Elogios</h2></Row>
         <br></br>

@@ -6,7 +6,7 @@ import wpp from '../Footer/whatsapp.png';
 
 function Footer () {
     return (
-        <Container fluid className="contatos">
+        <Container fluid className="fixed-bottom">
             <Row>
             <Col className="col-md-9">
                 <img src={email} alt="Email"  className="email" />
@@ -17,8 +17,8 @@ function Footer () {
                 (11) 94786-0000
             </Col>
             <hr></hr>
-            </Row>
-                <p className="text-center">FullStack Eletro 2020 &copy; Priscila Ribeiro</p>
+            </Row> 
+                <p className="text-center bg-light">FullStack Eletro 2020 &copy; Priscila Ribeiro</p>
         </Container>
     );
 }
