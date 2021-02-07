@@ -1,6 +1,6 @@
 <?php 
 
-require_once "../Actions/db_connect.php";
+require_once "../bd/Actions/db_connect.php";
 
 $result = query("SELECT * FROM produto");
 $produtos = [];
