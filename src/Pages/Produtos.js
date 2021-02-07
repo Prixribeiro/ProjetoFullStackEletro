@@ -1,14 +1,15 @@
 import {useState, useEffect} from 'react';
-
-import Produto from '../Components/Produto';
+import {lazy, Suspense} from 'react'
 import {Container, Row} from 'react-bootstrap';
+
+const Produto = lazy(() => import ('../Components/Produto'));
 
 export default function Produtos(){
 
     const [produtos, setProdutos] = useState ([]);
   
     useEffect(async () => {
-          const resposta = await fetch("http://localhost:5000/produtos");
+          const resposta = await fetch("http://localhost:8888/ProjetoFullStackEletro-php/PHP/Api/produto.php");
           const dados = await resposta.json();
           setProdutos(dados);
       }, []);
@@ -18,9 +19,10 @@ export default function Produtos(){
         <Container>
             <h1 className="text-center">Produtos</h1>
             <hr></hr>
-            <Row>
-               {produtos && produtos.map(item=> <Produto key={item.idproduto} imagem={item.imagem} descricao={item.descricao} precoantigo={item.precoantigo} precoatual={item.precoatual} categoria={item.geladeira} estoque={item.Estoque}/>)}
-            
+            <Row> 
+               <Suspense fallback={<p className="display-4 text-center">Aguarde um instante, os itens estão sendo carregados! :) </p>}>
+                    {produtos && produtos.map(item=> <Produto key={item.idproduto} imagem={item.imagem} descricao={item.descricao} precoantigo={item.precoantigo} precoatual={item.precoatual} categoria={item.geladeira} estoque={item.Estoque}/>)}
+               </Suspense>
             </Row>
             <hr></hr>
         </Container>
