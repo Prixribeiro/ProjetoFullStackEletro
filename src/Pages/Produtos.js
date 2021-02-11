@@ -7,7 +7,8 @@ const Produto = lazy(() => import ('../Components/Produto'));
 export default function Produtos(){
 
     const [produtos, setProdutos] = useState ([]);
-  
+    
+    //eslint-disable-next-line
     useEffect(async () => {
           const resposta = await fetch("http://localhost:5000/produtos");
           const dados = await resposta.json();
@@ -26,5 +27,4 @@ export default function Produtos(){
             </Row>
             <hr></hr>
         </Container>
-    )
-}
+    )};
